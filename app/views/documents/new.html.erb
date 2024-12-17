@@ -1,0 +1,5 @@
+<%= form_with model: @document do |f| %>
+  <%= f.text_area :title %>
+  <%= f.text_area :body %>
+  <%= f.submit "投稿" %>
+<% end %>
