@@ -1,5 +1,17 @@
-<%= form_with model: @document do |f| %>
-  <%= f.text_area :title %>
-  <%= f.text_area :body %>
-  <%= f.submit "投稿" %>
-<% end %>
+<div class="container p-3">
+  <div class="center-block">
+    <h3>投稿文作成</h3>
+    
+    <%= form_with model: @document do |f| %>
+      <p>表紙</p>
+      <%= f.file_field :img %>
+      <p>タイトル</p>
+      <%= f.text_field :title, size: 50 %>
+      <p>本文</p>
+      <%= f.text_area :body, rows: 15, cols: 60, placeholder: "ここに本文を入力してください"%>
+      <div class="text-right">
+        <%= f.submit "投稿", class: "btn btn-sm btn-secondary mt-2" %>
+      </div>
+    <% end %>
+  </div>
+</div>

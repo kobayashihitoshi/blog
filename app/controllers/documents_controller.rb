@@ -4,7 +4,7 @@ class DocumentsController < ApplicationController
   end
   
   def index
-    @document = Document.all
+    @documents = Document.all
   end
 
   def show
@@ -18,7 +18,7 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new(document_params)
     if @document.save
-      redirect_to document_path(@post)
+      redirect_to documents_path(@document)
     else
       @documents = Document.all
       render :new

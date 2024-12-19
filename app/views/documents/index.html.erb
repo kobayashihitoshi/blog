@@ -1,5 +1,18 @@
-<div class="container w-75%">
-  <h1>WEBlog</h1>
-  <p>私の記録</p>
-  <%= link_to "新規作成", new_document_path %>
+<div class="container p-3">
+  
+    <% @documents.each do |document| %>
+    <div class="card" style="width: 18rem;">
+      <% if document.img.attached? %>
+        <%= image_tag document.img, class: "card-img-top" %>
+      <% else %>
+        
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= document.title %></h5>
+        <p class="card-text"><%= document.body %></p>
+      </div>
+    </div>
+    <% end %>
+    
+  
 </div>
